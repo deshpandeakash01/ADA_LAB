@@ -69,38 +69,29 @@ void printArray(int arr[], int n) {
     printf("\n");
 }
 int main() {
-    int N = 10000000; // Adjust size as needed
+    int N = 5000000; // Adjust size as needed
     int *arr = (int*)malloc(N * sizeof(int));
     srand(time(NULL));
-
     // Generate random array
     for (int i = 0; i < N; i++)
-        arr[i] = rand() % 1000000;
-
-    printf("Original Array:\n");
-    printArray(arr, N);
-
-    // Bottom-Up
+        arr[i] = rand() % 100000;
+    // printf("Original Array:\n");
+    // printArray(arr, N);
     int *arr1 = (int*)malloc(N * sizeof(int));
     for (int i = 0; i < N; i++) arr1[i] = arr[i];
     clock_t start = clock();
     heapSortBottomUp(arr1, N);
     clock_t end = clock();
+    // printf("sorted array : ");
+    // printArray(arr1,N);
     printf("\nBottom-Up Heap Sort Time: %f seconds\n",(double)(end - start) / CLOCKS_PER_SEC);
-    // printf("Bottom-Up Sorted Array:\n");
-    // printArray(arr1, N);
-
-    // Top-Down
+    //topdown
     int *arr2 = (int*)malloc(N * sizeof(int));
     for (int i = 0; i < N; i++) arr2[i] = arr[i];
     clock_t startTD = clock();
     heapSortTopDown(arr2, N);
     clock_t endTD = clock();
     printf("\nTop-Down Heap Sort Time: %f seconds\n",(double)(endTD - startTD) / CLOCKS_PER_SEC);
-
-    // printf("Top-Down Sorted Array:\n");
-    // printArray(arr2, N);
-
     free(arr);
     free(arr1);
     free(arr2);

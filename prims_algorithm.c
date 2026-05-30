@@ -50,7 +50,7 @@ int main() {
                         { 0, 5, 7, 9, 0 } };
 
     printf("Prim's Minimum Spanning Tree:\n");
-    primMST(graph);
+    primMST(graph,5);
 
     return 0;
 }

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 void merge(int arr[], int l, int m, int r) {
     int n1 = m - l + 1;
     int n2 = r - m;
@@ -19,7 +18,6 @@ void merge(int arr[], int l, int m, int r) {
     while (i < n1) arr[k++] = L[i++];
     while (j < n2) arr[k++] = R[j++];
 }
-
 void mergeSort(int arr[], int l, int r) {
     if (l < r) {
         int m = l + (r - l) / 2;
